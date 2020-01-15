@@ -11,7 +11,14 @@
 |
 */
 
+use App\Drink;
+use App\Http\Controllers\DrinkController;
 
 Route::get('/admin/food', 'FoodController@index');
 
 Route::get('/admin/drink', 'DrinkController@index');
+
+Route::get('/admin/drink/create','DrinkController@create');
+
+Route::post('/admin/drink','DrinkController@store');
+

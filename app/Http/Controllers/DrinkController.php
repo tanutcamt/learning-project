@@ -11,6 +11,20 @@ class DrinkController extends Controller
     {
         $drinks = Drink::all();
         return view('drink.index',compact('drinks'));
+    }
 
+    public function create()
+    {
+        return view('drink.create');
+    }
+
+    public function store()
+    {
+        Drink::create([
+            'name'=>request('name_drink'),
+            'price'=>request('price'),
+        ]);
+
+        return redirect('/admin/drink');
     }
 }
