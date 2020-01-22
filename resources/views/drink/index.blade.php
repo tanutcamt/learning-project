@@ -9,18 +9,19 @@
 </head>
 
 <body>
-    <a href="/admin/drink/create">เพิ่มเครื่องดื่ม</a>
-
     <h1>drink</h1>
+    <a href="/admin/drink/create">เพิ่มเครื่องดื่ม</a>
     <table>
         <tr>
             <td>name</td>
             <td>price</td>
+            <td>Action</td>
         </tr>
         @foreach($drinks as $d)
         <tr>
             <td>{{$d->name}}</td>
             <td>{{$d->price}}</td>
+            <td><a href="/admin/drink/{{$d->id}}/edit">แก้ไข</td>
         </tr>
         @endforeach
     </table>

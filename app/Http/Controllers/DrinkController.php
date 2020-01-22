@@ -24,7 +24,22 @@ class DrinkController extends Controller
             'name'=>request('name_drink'),
             'price'=>request('price'),
         ]);
+        
 
         return redirect('/admin/drink');
     }
+    public function edit(Drink $drink)
+    {
+        return view('drink.edit',compact('drink'));
+    }
+
+    public function update(Drink $drink)
+    {
+       $drink->update([
+          'name' =>request('name_drink'),
+          'price' =>request('price'),
+       ]);
+       return redirect('/admin/drink');
+    }
+
 }
